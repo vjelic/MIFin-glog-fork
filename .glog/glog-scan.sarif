@@ -12,178 +12,10 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
-              "id": "glog-077f172d-e80a-43dd-a9c9-5cba1707b13f",
+              "id": "e033b0bc-afd4-3a1d-a01b-69fc2d1c3c21",
               "help": {
                 "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-dffdd8ef-2e57-4604-b8e7-044e87f860e8",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-f49d0a41-22c2-4e9e-9cf6-2345d1ac961a",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-b6403bbf-5a9a-4151-bc98-82730a06509e",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-87d81252-fb9d-4106-ae7d-9ddb86cbb4ce",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-26ba41d1-6886-4afd-b8c9-ece58bd691d7",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-a5bf1103-1c59-4b11-ba71-41e39bf908fc",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-12d8d009-2320-4e9c-ba9c-c875f3078db8",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-9cc54c27-f655-4109-b59d-a6b2c81ebb09",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators, such as the `rand()` function, can lead to vulnerabilities, especially in security-sensitive applications. The `rand()` function is not suitable for cryptographic purposes because it generates predictable sequences of numbers if the seed is known. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, such as `std::random_device` and `std::mt19937`, which can be used to generate random numbers more securely.\n\n### Source Code Fix Recommendation\n\nReplace the use of `rand()` with a more secure random number generator from the `<random>` library. Here is an example of how to do this:\n\n```cpp\n#include <iostream>\n#include <random>\n\nint main() {\n    // Create a random device and a Mersenne Twister random number generator\n    std::random_device rd;\n    std::mt19937 gen(rd());\n\n    // Define a distribution range\n    std::uniform_int_distribution<> dis(1, 100);\n\n    // Generate a random number\n    int random_number = dis(gen);\n\n    std::cout << \"Secure random number: \" << random_number << std::endl;\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example properly, the following library is required:\n\n- `<random>`: This library provides facilities for generating random numbers.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS148264"
-                ]
-              }
-            },
-            {
-              "id": "glog-0c9591fa-a210-4d8a-9b33-a65574157d8d",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators can lead to vulnerabilities, especially when randomness is required for security purposes. The `rand()` function, which relies on `RAND_MAX`, is a common example of a non-cryptographic random number generator. It is predictable and not suitable for cryptographic purposes, such as generating keys, tokens, or any other security-sensitive data.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographic random number generator. In C++, the `<random>` library provides better alternatives, such as `std::random_device` and `std::mt19937`, which are more suitable for generating random numbers in a secure manner.\n\n### Source Code Fix Recommendation\n\nReplace the use of `rand()` with a more secure random number generator from the `<random>` library. Here's an example of how to do this:\n\n```cpp\n#include <iostream>\n#include <random>\n\nint main() {\n    // Create a random device and a Mersenne Twister random number generator\n    std::random_device rd;\n    std::mt19937 gen(rd());\n\n    // Define the range for random numbers\n    std::uniform_int_distribution<> dis(1, 100);\n\n    // Generate a random number\n    int random_number = dis(gen);\n\n    std::cout << \"Secure random number: \" << random_number << std::endl;\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following library is required:\n\n- `<random>`: This is part of the C++ Standard Library and does not require any additional dependencies beyond a standard C++11-compliant compiler.\n\n### Relevant OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS148264"
-                ]
-              }
-            },
-            {
-              "id": "glog-6d70d484-b8c9-487d-8025-6d3e8085ece4",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-a348e938-e0ff-496d-b402-d3868107b35c",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-df4b859b-0327-4085-a8b0-4ba1f36f98ef",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-9e685f11-8494-4f58-8a85-99ea09a49e83",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS126858"
-                ]
-              }
-            },
-            {
-              "id": "glog-a1546978-4a7b-488b-a6ad-cab6d3e84001",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nIn C++ programming, using system time or a fixed value to seed randomness can lead to predictable random number sequences. This vulnerability can be exploited by attackers to predict the outcomes of supposedly random operations, which can compromise security, especially in cryptographic applications or when generating unique identifiers.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a more secure source of randomness for seeding. The C++11 standard library provides `std::random_device`, which is a non-deterministic random number generator that can be used to seed other random number generators.\n\n### Source Code Fix Recommendation\n\nReplace the use of `srand(0)` with a more secure seeding method using `std::random_device` and `std::mt19937`:\n\n```cpp\n#include <iostream>\n#include <random> // Required for std::random_device and std::mt19937\n\nint main() {\n    // Create a random device and use it to seed the random number generator\n    std::random_device rd;\n    std::mt19937 gen(rd());\n\n    // Generate a random number\n    std::uniform_int_distribution<> dis(1, 100);\n    int random_number = dis(gen);\n\n    std::cout << \"Random number: \" << random_number << std::endl;\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following standard library headers are required:\n\n- `<iostream>`: For input and output operations.\n- `<random>`: For random number generation utilities.\n\n### Relevant Links\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+                "markdown": "## Description\n\nIn C++ programming, using system time or a static value to seed randomness can lead to predictable random numbers, which is a security vulnerability. This is because if an attacker can predict the seed value, they can predict the sequence of random numbers that will be generated, which can lead to various types of attacks, such as brute force attacks.\n\nIn the given code example, `srand(0)` is used to seed the random number generator. This is a static value, which means that every time the program is run, the same sequence of random numbers will be generated. This makes the random numbers predictable, which is a security vulnerability.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, you should use a truly random value to seed the random number generator. One way to do this is to use the current time, but this is still predictable to some extent. A better way is to use a value that is more difficult for an attacker to predict, such as the process ID or a value from a hardware random number generator.\n\n## Source Code Fix Recommendation\n\nHere is a code fix that uses the process ID to seed the random number generator:\n\n```cpp\n#include <cstdlib>\n#include <ctime>\n#include <unistd.h>\n\nint main() {\n    srand(getpid() ^ time(NULL));\n    // rest of the code\n}\n```\n\n## Library Dependencies\n\nThe code example requires the following libraries:\n\n- cstdlib\n- ctime\n- unistd.h\n\n## References\n\n- [CWE-330: Use of Insufficiently Random Values](https://cwe.mitre.org/data/definitions/330.html)"
               },
               "properties": {
                 "tags": [
@@ -192,10 +24,23 @@
               }
             },
             {
-              "id": "glog-134f0a95-6de6-453b-8bf5-264a01617be8",
+              "id": "e17389e5-115a-3f48-923a-b2f3caaee779",
               "help": {
                 "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of weak or broken cryptographic algorithms for hashing. In the context of C++, this vulnerability can occur when a developer uses a weak hash function like MD5. MD5 is considered insecure for many cryptographic functions as it is susceptible to hash collisions, where two different inputs produce the same hash output, making it easier for an attacker to reverse-engineer the original input.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger, more secure hash function. SHA-256 is a good choice for most applications. It's also important to keep up to date with the latest cryptographic standards and recommendations, as what is considered secure can change over time.\n\n## Source Code Fix Recommendation\n\nReplace the MD5 hash function with a more secure one, such as SHA-256. Here's an example of how you might do this using the OpenSSL library:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n\n// usage\nkernel[\"sha256_sum\"] = sha256(input);\n```\n\n## Library Dependencies\n\nThe OpenSSL library is required for the SHA-256 hash function.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "e17389e5-115a-3f48-923a-b2f3caaee779"
+                ]
+              }
+            },
+            {
+              "id": "3305ce50-fc3d-3b7a-8ed9-d34f5f7d4e6d",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of weak or broken cryptographic algorithms for hashing, encryption, or digital signatures. In the context of C++, this vulnerability can occur when a developer uses a weak cryptographic algorithm like MD5 for hashing. MD5 is considered insecure as it is susceptible to hash collisions, where two different inputs produce the same hash output, making it easier for an attacker to reverse-engineer the original input.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger, more secure hash algorithm such as SHA-256 or SHA-3. These algorithms are currently considered secure and are not susceptible to the same vulnerabilities as MD5.\n\n## Source Code Fix Recommendation\n\nReplace the use of MD5 with a more secure hash algorithm. The specific library and function to use will depend on your specific use case and the libraries available to you. Here is an example of how you might use the OpenSSL library to compute a SHA-256 hash:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n```\n\n## Library Dependencies\n\nThe above code requires the OpenSSL library. You can install it on Ubuntu with the following command:\n\n```bash\nsudo apt-get install libssl-dev\n```\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
               },
               "properties": {
                 "tags": [
@@ -204,10 +49,189 @@
               }
             },
             {
-              "id": "glog-7902dbf2-89b6-4a6e-8f02-144a1725da5e",
+              "id": "5862c9ef-44cc-30c4-a5e1-db01eaf10039",
               "help": {
                 "text": "",
-                "markdown": "### Description\n\nIn C++ programming, using weak or non-cryptographic random number generators, such as the `rand()` function, can lead to vulnerabilities, especially in security-sensitive applications. The `rand()` function is not suitable for cryptographic purposes because it generates predictable sequences of numbers if the seed is known. This predictability can be exploited by attackers to compromise the security of the application.\n\n### General Mitigation Advice\n\nTo mitigate this vulnerability, use a cryptographically secure random number generator. In C++, the `<random>` library provides better alternatives, such as `std::random_device` and `std::mt19937`, which can be used to generate random numbers more securely.\n\n### Source Code Fix Recommendation\n\nReplace the use of `rand()` with a more secure random number generator from the `<random>` library. Here is an example of how to do this:\n\n```cpp\n#include <iostream>\n#include <random>\n\nint main() {\n    // Create a random device and a Mersenne Twister random number generator\n    std::random_device rd;\n    std::mt19937 gen(rd());\n\n    // Define a distribution range\n    std::uniform_int_distribution<> dis(1, 100);\n\n    // Generate a random number\n    int random_number = dis(gen);\n\n    std::cout << \"Secure random number: \" << random_number << std::endl;\n\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example properly, the following library is required:\n\n- `<random>`: This library provides facilities for generating random numbers.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)](https://cwe.mitre.org/data/definitions/338.html)"
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of weak or broken cryptographic algorithms for hashing. In the context of C++, this vulnerability can occur when a developer uses a weak hash function like MD5. MD5 is considered insecure for many cryptographic functions as it is susceptible to hash collisions, where two different inputs produce the same hash output, making it easier for an attacker to reverse-engineer the original input.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger, more secure hash function. SHA-256 is a good choice for most applications. It's also important to keep up to date with the latest cryptographic standards and recommendations, as what is considered secure can change over time.\n\n## Source Code Fix Recommendation\n\nReplace the MD5 hash function with a more secure one, such as SHA-256. Here's an example of how you might do this using the OpenSSL library:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n\n// usage\nkernel[\"sha256_sum\"] = sha256(input);\n```\n\n## Library Dependencies\n\nThe OpenSSL library is required for the SHA-256 hash function.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "5862c9ef-44cc-30c4-a5e1-db01eaf10039"
+                ]
+              }
+            },
+            {
+              "id": "2bd92ad8-3d02-3fd9-802f-7653db8ad6ef",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of weak or broken cryptographic hash functions in a software application. In C++ programming, this vulnerability can occur when a developer uses a weak hash function like MD5. MD5 is considered weak because it is susceptible to collision attacks, where two different inputs produce the same hash output, thus compromising the integrity of the data.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use stronger hash functions such as SHA-256 or SHA-3. These hash functions are currently considered secure and are not susceptible to known collision attacks. Additionally, it is important to keep up to date with the latest cryptographic research and standards, as the security of hash functions can change over time.\n\n## Source Code Fix Recommendation\n\nReplace the use of MD5 with a stronger hash function. Here is an example of how to use SHA-256 with the OpenSSL library in C++:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n```\n\n## Library Dependencies\n\nThe above code example requires the OpenSSL library. You can install it on Ubuntu with the following command:\n\n```bash\nsudo apt-get install libssl-dev\n```\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858"
+                ]
+              }
+            },
+            {
+              "id": "8ef3291d-f870-325c-b2c0-63496e85c704",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of a weak cryptographic hash function, such as MD5, in a security context. MD5 is considered to be a weak hash function as it is susceptible to hash collisions, where different inputs produce the same hash output. This can lead to various security issues, such as data integrity violations and password cracking.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger hash function, such as SHA-256 or SHA-3. These hash functions are currently considered to be secure and are not susceptible to known practical collision attacks.\n\n## Source Code Fix Recommendation\n\nReplace the use of MD5 with a stronger hash function. Here is an example of how you might do this using SHA-256:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n\n// Usage\nstd::string hsaco = \"your data here\";\nstd::string hash = sha256(hsaco);\n```\n\n## Library Dependencies\n\nThe above code example requires the OpenSSL library to execute properly.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "8ef3291d-f870-325c-b2c0-63496e85c704"
+                ]
+              }
+            },
+            {
+              "id": "54e9c1f0-08c2-34af-8148-2da1a8a3223e",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Vulnerable Hash Algorithm\" vulnerability refers to the use of weak or broken cryptographic hash functions in a software application. In this case, the MD5 hash function is used, which is considered insecure for many cryptographic purposes because it is susceptible to hash collisions. An attacker could exploit this vulnerability to produce the same hash output using different input, leading to potential security risks such as unauthorized access or data integrity issues.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger, more secure hash function such as SHA-256 or SHA-3. These hash functions are currently considered secure and are not susceptible to known vulnerabilities like MD5.\n\n## Source Code Fix Recommendation\n\nReplace the use of MD5 with a more secure hash function. Here is an example of how you might do this using SHA-256:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n\n// Usage\nif (sha256(hsaco) == static_cast<std::string>(sha256_sum)) {\n    // ...\n}\n```\n\n## Library Dependencies\n\nThe code example requires the OpenSSL library to execute properly.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "54e9c1f0-08c2-34af-8148-2da1a8a3223e"
+                ]
+              }
+            },
+            {
+              "id": "d274d340-9401-3a0e-a8a7-6a2e0bfa65ef",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of a weak cryptographic hash function, such as MD5, in a security context. MD5 is considered to be a weak hash function as it is susceptible to hash collisions, where different inputs produce the same hash output. This can lead to various security issues, such as data integrity violations and password cracking.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger hash function, such as SHA-256 or SHA-3. These hash functions are currently considered to be secure and are not susceptible to known practical collision attacks.\n\n## Source Code Fix Recommendation\n\nReplace the use of MD5 with a stronger hash function. Here is an example of how you might do this using SHA-256:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n\n// Usage\nstd::string hsaco = \"your data here\";\nstd::string hash = sha256(hsaco);\n```\n\n## Library Dependencies\n\nThe above code example requires the OpenSSL library to execute properly.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "d274d340-9401-3a0e-a8a7-6a2e0bfa65ef"
+                ]
+              }
+            },
+            {
+              "id": "045c571e-1833-36a4-90d3-e8c4efd68ad6",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nThe \"Vulnerable Hash Algorithm\" vulnerability refers to the use of weak or broken cryptographic hash functions in a software application. In this case, the MD5 hash function is used, which is considered insecure for many cryptographic purposes because it is susceptible to hash collisions. An attacker could exploit this vulnerability to produce the same hash output using different input, leading to potential security risks such as unauthorized access or data integrity issues.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger, more secure hash function such as SHA-256 or SHA-3. These hash functions are currently considered secure and are not susceptible to known vulnerabilities like MD5.\n\n## Source Code Fix Recommendation\n\nReplace the use of MD5 with a more secure hash function. Here is an example of how you might do this using SHA-256:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n\n// Usage\nif (sha256(hsaco) == static_cast<std::string>(sha256_sum)) {\n    // ...\n}\n```\n\n## Library Dependencies\n\nThe code example requires the OpenSSL library to execute properly.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "045c571e-1833-36a4-90d3-e8c4efd68ad6"
+                ]
+              }
+            },
+            {
+              "id": "efbdd746-c022-3604-a958-9b87aecc4626",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of a weak cryptographic hash function. In this case, the MD5 hash function is used, which is considered insecure for many cryptographic functions. This is because it is susceptible to hash collisions, where different inputs produce the same hash output, making it easier for an attacker to reverse-engineer the original input.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger hash function such as SHA-256 or SHA-3. These hash functions are currently considered secure and are not susceptible to the same vulnerabilities as MD5.\n\n## Source Code Fix Recommendation\n\nReplace the MD5 hash function with a stronger hash function. For example, if you are using the OpenSSL library, you can replace the MD5 function with the SHA256 function as follows:\n\n```cpp\n#include <openssl/sha.h>\n\nSHA256_CTX context;\nunsigned char md[SHA256_DIGEST_LENGTH];\n\nSHA256_Init(&context);\nSHA256_Update(&context, (unsigned char*)input, strlen(input));\nSHA256_Final(md, &context);\n```\n\n## Library Dependencies\n\nThe code example provided does not specify which libraries are being used. However, if the MD5 function is being replaced with the SHA256 function from the OpenSSL library, the OpenSSL library would be a dependency.\n\n## OWASP Resources\n\n- [Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "efbdd746-c022-3604-a958-9b87aecc4626"
+                ]
+              }
+            },
+            {
+              "id": "af3ff7ff-b808-301f-ac86-a19f99df929f",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of weak or broken cryptographic algorithms for hashing, encryption, or digital signatures. In the context of C++, this vulnerability can occur when a developer uses a weak cryptographic algorithm like MD5 for hashing. MD5 is considered insecure as it is susceptible to hash collisions, where two different inputs produce the same hash output, making it easier for an attacker to reverse-engineer the original input.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger, more secure hash algorithm such as SHA-256 or SHA-3. These algorithms are currently considered secure and are not susceptible to the same vulnerabilities as MD5.\n\n## Source Code Fix Recommendation\n\nReplace the use of MD5 with a more secure hash algorithm. The specific library and function to use will depend on your specific use case and the libraries available to you. Here is an example of how you might use the OpenSSL library to compute a SHA-256 hash:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n```\n\n## Library Dependencies\n\nThe above code requires the OpenSSL library. You can install it on Ubuntu with the following command:\n\n```bash\nsudo apt-get install libssl-dev\n```\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858"
+                ]
+              }
+            },
+            {
+              "id": "32732dc6-8a2d-302c-ab9f-50453af1bb0e",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of a weak cryptographic hash function. In this case, the MD5 hash function is used, which is considered insecure for many cryptographic functions. This is because it is susceptible to hash collisions, where different inputs produce the same hash output, making it easier for an attacker to reverse-engineer the original input.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger hash function such as SHA-256 or SHA-3. These hash functions are currently considered secure and are not susceptible to the same vulnerabilities as MD5.\n\n## Source Code Fix Recommendation\n\nReplace the MD5 hash function with a stronger hash function. For example, if you are using the OpenSSL library, you can replace the MD5 function with the SHA256 function as follows:\n\n```cpp\n#include <openssl/sha.h>\n\nSHA256_CTX context;\nunsigned char md[SHA256_DIGEST_LENGTH];\n\nSHA256_Init(&context);\nSHA256_Update(&context, (unsigned char*)input, strlen(input));\nSHA256_Final(md, &context);\n```\n\n## Library Dependencies\n\nThe code example provided does not specify which libraries are being used. However, if the MD5 function is being replaced with the SHA256 function from the OpenSSL library, the OpenSSL library would be a dependency.\n\n## OWASP Resources\n\n- [Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)\n\n## Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "32732dc6-8a2d-302c-ab9f-50453af1bb0e"
+                ]
+              }
+            },
+            {
+              "id": "1d2062f9-b115-38cc-83c1-083e4473755d",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of a weak cryptographic hash function, such as MD5, in a security context. MD5 is considered to be a weak hash function as it is susceptible to hash collisions, where different inputs produce the same hash output. This can lead to various security issues, such as data integrity violations and password cracking.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger hash function, such as SHA-256 or SHA-3. These hash functions are currently considered to be secure and are not susceptible to known practical collision attacks.\n\n## Source Code Fix Recommendation\n\nReplace the use of MD5 with a stronger hash function. Here is an example of how you might do this using SHA-256:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n\n// Usage\nstd::string hsaco = \"your data here\";\nstd::string hash = sha256(hsaco);\n```\n\n## Library Dependencies\n\nThe above code example requires the OpenSSL library to execute properly.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "1d2062f9-b115-38cc-83c1-083e4473755d"
+                ]
+              }
+            },
+            {
+              "id": "1255c98a-c06b-32fa-b1f6-a6dba85578f5",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of a weak cryptographic hash function, such as MD5, in a security context. MD5 is considered to be a weak hash function as it is susceptible to hash collisions, where different inputs produce the same hash output. This can lead to various security issues, such as data integrity violations and password cracking.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger hash function, such as SHA-256 or SHA-3. These hash functions are currently considered to be secure and are not susceptible to known practical collision attacks.\n\n## Source Code Fix Recommendation\n\nReplace the use of MD5 with a stronger hash function. Here is an example of how you might do this using SHA-256:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n\n// Usage\nstd::string hsaco = \"your data here\";\nstd::string hash = sha256(hsaco);\n```\n\n## Library Dependencies\n\nThe above code example requires the OpenSSL library to execute properly.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "1255c98a-c06b-32fa-b1f6-a6dba85578f5"
+                ]
+              }
+            },
+            {
+              "id": "82f72940-a879-3d20-8028-a55bd6d7d79b",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of weak or broken cryptographic hash functions in a software application. In C++ programming, this vulnerability can occur when a developer uses a weak hash function like MD5. MD5 is considered weak because it is susceptible to collision attacks, where two different inputs produce the same hash output, thus compromising the integrity of the data.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use stronger hash functions such as SHA-256 or SHA-3. These hash functions are currently considered secure and are not susceptible to known collision attacks. Additionally, it is important to keep up to date with the latest cryptographic research and standards, as the security of hash functions can change over time.\n\n## Source Code Fix Recommendation\n\nReplace the use of MD5 with a stronger hash function. Here is an example of how to use SHA-256 with the OpenSSL library in C++:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n```\n\n## Library Dependencies\n\nThe above code example requires the OpenSSL library. You can install it on Ubuntu with the following command:\n\n```bash\nsudo apt-get install libssl-dev\n```\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858"
+                ]
+              }
+            },
+            {
+              "id": "1bf0f3de-29db-391f-9627-f2a5e25cef3f",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of weak or broken cryptographic algorithms for hashing. In the context of C++, this vulnerability can occur when a developer uses a weak hash function like MD5. MD5 is considered insecure for many cryptographic functions as it is susceptible to hash collisions, where two different inputs produce the same hash output, making it easier for an attacker to reverse-engineer the original input.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger, more secure hash function. SHA-256 is a good choice for most applications. It's also important to keep up to date with the latest cryptographic standards and recommendations, as what is considered secure can change over time.\n\n## Source Code Fix Recommendation\n\nReplace the MD5 hash function with a more secure one, such as SHA-256. Here's an example of how you might do this using the OpenSSL library:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n\n// usage\nkernel[\"sha256_sum\"] = sha256(input);\n```\n\n## Library Dependencies\n\nThe OpenSSL library is required for the SHA-256 hash function.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "1bf0f3de-29db-391f-9627-f2a5e25cef3f"
+                ]
+              }
+            },
+            {
+              "id": "34afaded-b059-3632-92d8-0033964d287e",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nA \"Vulnerable Hash Algorithm\" vulnerability refers to the use of weak or broken cryptographic algorithms for hashing. In the context of C++, this vulnerability can occur when a developer uses a weak hash function like MD5. MD5 is considered insecure for many cryptographic functions as it is susceptible to hash collisions, where two different inputs produce the same hash output, making it easier for an attacker to reverse-engineer the original input.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a stronger, more secure hash function. SHA-256 is a good choice for most applications. It's also important to keep up to date with the latest cryptographic standards and recommendations, as what is considered secure can change over time.\n\n## Source Code Fix Recommendation\n\nReplace the MD5 hash function with a more secure one, such as SHA-256. Here's an example of how you might do this using the OpenSSL library:\n\n```cpp\n#include <openssl/sha.h>\n\nstd::string sha256(const std::string str)\n{\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, str.c_str(), str.size());\n    SHA256_Final(hash, &sha256);\n    std::stringstream ss;\n    for(int i = 0; i < SHA256_DIGEST_LENGTH; i++)\n    {\n        ss << std::hex << std::setw(2) << std::setfill('0') << (int)hash[i];\n    }\n    return ss.str();\n}\n\n// usage\nkernel[\"sha256_sum\"] = sha256(input);\n```\n\n## Library Dependencies\n\nThe OpenSSL library is required for the SHA-256 hash function.\n\n## References\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS126858",
+                  "34afaded-b059-3632-92d8-0033964d287e"
+                ]
+              }
+            },
+            {
+              "id": "82c44af4-df2b-3eb4-aa7a-e910ad90f887",
+              "help": {
+                "text": "",
+                "markdown": "## Description\n\nIn C++ programming, the use of non-cryptographic or weak random number generators can lead to vulnerabilities. This is because these generators can produce predictable values, which can be exploited by an attacker. For instance, the `rand()` function in C++ is a weak random number generator as it uses a deterministic algorithm. If an attacker can predict the sequence of random numbers generated by `rand()`, they can potentially exploit this predictability to compromise the system.\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, it is recommended to use a strong, cryptographic random number generator. In C++, this can be achieved by using functions provided by the `<random>` library, such as `std::random_device` or `std::mt19937`.\n\n## Source Code Fix Recommendation\n\nReplace the use of `rand()` with a cryptographic random number generator. Here is an example of how to do this:\n\n```cpp\n#include <random>\n\nstd::random_device rd;\nstd::mt19937 gen(rd());\nstd::uniform_int_distribution<> distr(0, 100);\n\nint random_number = distr(gen);\nstd::ignore = random_number;\n```\n\nIn this code, `std::random_device` is used to seed the Mersenne Twister algorithm (`std::mt19937`), which is a strong random number generator. `std::uniform_int_distribution<>` is then used to generate a random number in the range [0, 100].\n\n## Library Dependencies\n\nThe code example requires the `<random>` library.\n\n## References\n\n- [OWASP - Insecure Randomness](https://owasp.org/www-community/vulnerabilities/Insecure_Randomness)\n- [CWE-338: Use of Cryptographically Weak PRNG](https://cwe.mitre.org/data/definitions/338.html)"
               },
               "properties": {
                 "tags": [
@@ -216,26 +240,28 @@
               }
             },
             {
-              "id": "glog-b0e0915a-0bdd-45c4-8d41-e8afd313cb17",
+              "id": "a206de3f-037f-312d-9d4d-520748f95e8d",
               "help": {
                 "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+                "markdown": "## Description\n\nIn C++ programming, the vulnerability \"Avoid Using Non-Cryptographic or Weak Random Number Generators\" refers to the use of weak or non-cryptographic random number generators that can lead to predictable or easily guessable values. This can be exploited by attackers to predict the outcome of the program, leading to potential security risks.\n\nIn the given code snippet, `rand()` function is used which is a weak random number generator. It generates pseudo-random numbers using a linear congruential generator with parameters that are not secure.\n\n```cpp\nd = static_cast<double>(rand() / (static_cast<double>(RAND_MAX)))\n```\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, use a strong cryptographic random number generator. In C++, you can use functions provided by the `<random>` library, such as `std::random_device` or `std::mt19937`.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the code snippet:\n\n```cpp\n#include <random>\n\nstd::random_device rd;\nstd::mt19937 gen(rd());\nstd::uniform_real_distribution<> dis(0, 1);\n\nd = dis(gen);\n```\n\n## Library Dependencies\n\nThe code example requires the `<random>` library.\n\n## References\n\n- [CWE-338: Use of Cryptographically Weak PRNG](https://cwe.mitre.org/data/definitions/338.html)"
               },
               "properties": {
                 "tags": [
-                  "DS126858"
+                  "DS148264",
+                  "a206de3f-037f-312d-9d4d-520748f95e8d"
                 ]
               }
             },
             {
-              "id": "glog-7350af88-c554-498b-a76f-35001b17e193",
+              "id": "f395dce0-db2d-3fa0-b5be-49397c94991b",
               "help": {
                 "text": "",
-                "markdown": "### Description\n\nThe \"Vulnerable/Compromised Hash Algorithm\" vulnerability in C++ refers to the use of cryptographic hash functions that are considered weak or broken, such as MD5. MD5 is known to be vulnerable to collision attacks, where two different inputs produce the same hash output. This can lead to security issues such as data integrity violations, authentication bypass, and other cryptographic weaknesses.\n\n### General Mitigation Advice\n\n1. **Avoid Using MD5**: Replace MD5 with a more secure hash function, such as SHA-256 or SHA-3.\n2. **Use a Cryptographic Library**: Utilize well-established cryptographic libraries that provide secure implementations of hash functions.\n3. **Regularly Update Libraries**: Ensure that cryptographic libraries are up-to-date to benefit from the latest security patches and improvements.\n\n### Source Code Fix Recommendation\n\nBelow is an example of how to replace MD5 with SHA-256 using the OpenSSL library in C++.\n\n```cpp\n#include <openssl/sha.h>\n#include <iostream>\n#include <iomanip>\n#include <sstream>\n#include <string>\n\n// Function to compute SHA-256 hash\nstd::string computeSHA256(const std::string& input) {\n    unsigned char hash[SHA256_DIGEST_LENGTH];\n    SHA256_CTX sha256;\n    SHA256_Init(&sha256);\n    SHA256_Update(&sha256, input.c_str(), input.size());\n    SHA256_Final(hash, &sha256);\n\n    std::stringstream ss;\n    for (int i = 0; i < SHA256_DIGEST_LENGTH; ++i) {\n        ss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(hash[i]);\n    }\n    return ss.str();\n}\n\nint main() {\n    std::string data = \"example data\";\n    std::string hash = computeSHA256(data);\n    std::cout << \"SHA-256: \" << hash << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code, you need the following library:\n\n- OpenSSL: This library provides the implementation of SHA-256 used in the example.\n\n### OWASP Resources\n\n- [OWASP Cryptographic Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html)\n- [OWASP Top Ten 2021](https://owasp.org/Top10/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-327: Use of a Broken or Risky Cryptographic Algorithm](https://cwe.mitre.org/data/definitions/327.html)"
+                "markdown": "## Description\n\nIn C++ programming, the vulnerability \"Avoid Using Non-Cryptographic or Weak Random Number Generators\" refers to the use of weak or non-cryptographic random number generators that can lead to predictable or easily guessable values. This can be exploited by attackers to predict the outcome of the program, leading to potential security risks.\n\nIn the given code snippet, `rand()` function is used which is a weak random number generator. It generates pseudo-random numbers using a linear congruential generator with parameters that are not secure.\n\n```cpp\nd = static_cast<double>(rand() / (static_cast<double>(RAND_MAX)))\n```\n\n## Mitigation Advice\n\nTo mitigate this vulnerability, use a strong cryptographic random number generator. In C++, you can use functions provided by the `<random>` library, such as `std::random_device` or `std::mt19937`.\n\n## Source Code Fix Recommendation\n\nHere is a recommended fix for the code snippet:\n\n```cpp\n#include <random>\n\nstd::random_device rd;\nstd::mt19937 gen(rd());\nstd::uniform_real_distribution<> dis(0, 1);\n\nd = dis(gen);\n```\n\n## Library Dependencies\n\nThe code example requires the `<random>` library.\n\n## References\n\n- [CWE-338: Use of Cryptographically Weak PRNG](https://cwe.mitre.org/data/definitions/338.html)"
               },
               "properties": {
                 "tags": [
-                  "DS126858"
+                  "DS148264",
+                  "f395dce0-db2d-3fa0-b5be-49397c94991b"
                 ]
               }
             }
@@ -251,11 +277,51 @@
       "language": "en-US",
       "results": [
         {
-          "ruleId": "glog-cf92c6c3-d84e-4690-9b2d-0ca5457d774d",
+          "ruleId": "e033b0bc-afd4-3a1d-a01b-69fc2d1c3c21",
           "kind": "fail",
           "level": "error",
           "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
+            "text": "Avoid using system time or static value for seeding randomness."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/include/conv_fin.hpp"
+                },
+                "region": {
+                  "startLine": 1885,
+                  "startColumn": 4,
+                  "endLine": 1885,
+                  "endColumn": 12,
+                  "charOffset": 70797,
+                  "charLength": 8,
+                  "snippet": {
+                    "text": "srand(0)",
+                    "rendered": {
+                      "text": "srand(0)",
+                      "markdown": "`srand(0)`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Critical",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.WeakRandomness"
+            ]
+          }
+        },
+        {
+          "ruleId": "3305ce50-fc3d-3b7a-8ed9-d34f5f7d4e6d",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Vulnerable Hash Algorithm"
           },
           "locations": [
             {
@@ -339,1315 +405,11 @@
           }
         },
         {
-          "ruleId": "glog-f49d0a41-22c2-4e9e-9cf6-2345d1ac961a",
+          "ruleId": "2bd92ad8-3d02-3fd9-802f-7653db8ad6ef",
           "kind": "fail",
           "level": "error",
           "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/fin.hpp"
-                },
-                "region": {
-                  "startLine": 241,
-                  "startColumn": 24,
-                  "endLine": 241,
-                  "endColumn": 27,
-                  "charOffset": 8697,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 8697,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 8697,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-077f172d-e80a-43dd-a9c9-5cba1707b13f",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/fin.hpp"
-                },
-                "region": {
-                  "startLine": 230,
-                  "startColumn": 47,
-                  "endLine": 230,
-                  "endColumn": 50,
-                  "charOffset": 8210,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 8210,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 8210,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-dffdd8ef-2e57-4604-b8e7-044e87f860e8",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/fin.hpp"
-                },
-                "region": {
-                  "startLine": 241,
-                  "startColumn": 46,
-                  "endLine": 241,
-                  "endColumn": 49,
-                  "charOffset": 8719,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 8719,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 8719,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-b6403bbf-5a9a-4151-bc98-82730a06509e",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/fin.hpp"
-                },
-                "region": {
-                  "startLine": 160,
-                  "startColumn": 62,
-                  "endLine": 160,
-                  "endColumn": 65,
-                  "charOffset": 5519,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 5519,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 5519,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-87d81252-fb9d-4106-ae7d-9ddb86cbb4ce",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/fin.hpp"
-                },
-                "region": {
-                  "startLine": 160,
-                  "startColumn": 23,
-                  "endLine": 160,
-                  "endColumn": 26,
-                  "charOffset": 5480,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 5480,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 5480,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-26ba41d1-6886-4afd-b8c9-ece58bd691d7",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/fin.hpp"
-                },
-                "region": {
-                  "startLine": 137,
-                  "startColumn": 51,
-                  "endLine": 137,
-                  "endColumn": 54,
-                  "charOffset": 4549,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 4549,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 4549,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-a5bf1103-1c59-4b11-ba71-41e39bf908fc",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/fin.hpp"
-                },
-                "region": {
-                  "startLine": 230,
-                  "startColumn": 17,
-                  "endLine": 230,
-                  "endColumn": 20,
-                  "charOffset": 8180,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 8180,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 8180,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-12d8d009-2320-4e9c-ba9c-c875f3078db8",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/fin.hpp"
-                },
-                "region": {
-                  "startLine": 137,
-                  "startColumn": 23,
-                  "endLine": 137,
-                  "endColumn": 26,
-                  "charOffset": 4521,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 4521,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 4521,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-9cc54c27-f655-4109-b59d-a6b2c81ebb09",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Avoid Using Weak or Non-Cryptographic Random Number Generators\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/random.hpp"
-                },
-                "region": {
-                  "startLine": 33,
-                  "startColumn": 35,
-                  "endLine": 33,
-                  "endColumn": 40,
-                  "charOffset": 1456,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "rand(",
-                    "rendered": {
-                      "text": "rand(",
-                      "markdown": "`rand(`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Important",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.PRNG.Weak"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-0c9591fa-a210-4d8a-9b33-a65574157d8d",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Avoid Using Weak or Non-Cryptographic Random Number Generators\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/random.hpp"
-                },
-                "region": {
-                  "startLine": 33,
-                  "startColumn": 65,
-                  "endLine": 33,
-                  "endColumn": 73,
-                  "charOffset": 1486,
-                  "charLength": 8,
-                  "snippet": {
-                    "text": "RAND_MAX",
-                    "rendered": {
-                      "text": "RAND_MAX",
-                      "markdown": "`RAND_MAX`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Important",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.PRNG.Weak"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-6d70d484-b8c9-487d-8025-6d3e8085ece4",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/bn_fin.hpp"
-                },
-                "region": {
-                  "startLine": 464,
-                  "startColumn": 46,
-                  "endLine": 464,
-                  "endColumn": 49,
-                  "charOffset": 15384,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/bn_fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 15384,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/bn_fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 15384,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-a348e938-e0ff-496d-b402-d3868107b35c",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/bn_fin.hpp"
-                },
-                "region": {
-                  "startLine": 469,
-                  "startColumn": 24,
-                  "endLine": 469,
-                  "endColumn": 27,
-                  "charOffset": 15523,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/bn_fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 15523,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/bn_fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 15523,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-df4b859b-0327-4085-a8b0-4ba1f36f98ef",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/bn_fin.hpp"
-                },
-                "region": {
-                  "startLine": 464,
-                  "startColumn": 24,
-                  "endLine": 464,
-                  "endColumn": 27,
-                  "charOffset": 15362,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/bn_fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 15362,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/bn_fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 15362,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-9e685f11-8494-4f58-8a85-99ea09a49e83",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/bn_fin.hpp"
-                },
-                "region": {
-                  "startLine": 454,
-                  "startColumn": 47,
-                  "endLine": 454,
-                  "endColumn": 50,
-                  "charOffset": 14882,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/bn_fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 14882,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/bn_fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 14882,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-a1546978-4a7b-488b-a6ad-cab6d3e84001",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "Avoid seeding randomness using system time or a fixed value."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/conv_fin.hpp"
-                },
-                "region": {
-                  "startLine": 1885,
-                  "startColumn": 4,
-                  "endLine": 1885,
-                  "endColumn": 12,
-                  "charOffset": 70797,
-                  "charLength": 8,
-                  "snippet": {
-                    "text": "srand(0)",
-                    "rendered": {
-                      "text": "srand(0)",
-                      "markdown": "`srand(0)`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.WeakRandomness"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-134f0a95-6de6-453b-8bf5-264a01617be8",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/bn_fin.hpp"
-                },
-                "region": {
-                  "startLine": 454,
-                  "startColumn": 17,
-                  "endLine": 454,
-                  "endColumn": 20,
-                  "charOffset": 14852,
-                  "charLength": 3,
-                  "snippet": {
-                    "text": "md5",
-                    "rendered": {
-                      "text": "md5",
-                      "markdown": "`md5`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/bn_fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 14852,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha512"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "A weak or broken hash algorithm was detected."
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/include/bn_fin.hpp"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 14852,
-                        "charLength": 3
-                      },
-                      "insertedContent": {
-                        "text": "sha256"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Critical",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.BannedHashAlgorithm"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-7902dbf2-89b6-4a6e-8f02-144a1725da5e",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Avoid Using Weak or Non-Cryptographic Random Number Generators\""
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/include/tensor.hpp"
-                },
-                "region": {
-                  "startLine": 258,
-                  "startColumn": 30,
-                  "endLine": 258,
-                  "endColumn": 35,
-                  "charOffset": 8328,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "rand(",
-                    "rendered": {
-                      "text": "rand(",
-                      "markdown": "`rand(`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Important",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Cryptography.PRNG.Weak"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-b0e0915a-0bdd-45c4-8d41-e8afd313cb17",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
+            "text": "Vulnerable Hash Algorithm"
           },
           "locations": [
             {
@@ -1731,11 +493,99 @@
           }
         },
         {
-          "ruleId": "glog-7350af88-c554-498b-a76f-35001b17e193",
+          "ruleId": "af3ff7ff-b808-301f-ac86-a19f99df929f",
           "kind": "fail",
           "level": "error",
           "message": {
-            "text": "\"Vulnerable/Compromised Hash Algorithm\""
+            "text": "Vulnerable Hash Algorithm"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/include/bn_fin.hpp"
+                },
+                "region": {
+                  "startLine": 469,
+                  "startColumn": 24,
+                  "endLine": 469,
+                  "endColumn": 27,
+                  "charOffset": 15523,
+                  "charLength": 3,
+                  "snippet": {
+                    "text": "md5",
+                    "rendered": {
+                      "text": "md5",
+                      "markdown": "`md5`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "A weak or broken hash algorithm was detected."
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "src/include/bn_fin.hpp"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 15523,
+                        "charLength": 3
+                      },
+                      "insertedContent": {
+                        "text": "sha512"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "description": {
+                "text": "A weak or broken hash algorithm was detected."
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "src/include/bn_fin.hpp"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 15523,
+                        "charLength": 3
+                      },
+                      "insertedContent": {
+                        "text": "sha256"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Critical",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.BannedHashAlgorithm"
+            ]
+          }
+        },
+        {
+          "ruleId": "82f72940-a879-3d20-8028-a55bd6d7d79b",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Vulnerable Hash Algorithm"
           },
           "locations": [
             {
@@ -1815,6 +665,46 @@
             "DevSkimConfidence": "High",
             "tags": [
               "Cryptography.BannedHashAlgorithm"
+            ]
+          }
+        },
+        {
+          "ruleId": "82c44af4-df2b-3eb4-aa7a-e910ad90f887",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Avoid Using Non-Cryptographic or Weak Random Number Generators"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/include/tensor.hpp"
+                },
+                "region": {
+                  "startLine": 258,
+                  "startColumn": 30,
+                  "endLine": 258,
+                  "endColumn": 35,
+                  "charOffset": 8328,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "rand(",
+                    "rendered": {
+                      "text": "rand(",
+                      "markdown": "`rand(`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Cryptography.PRNG.Weak"
             ]
           }
         }
